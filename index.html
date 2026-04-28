@@ -1,0 +1,29 @@
+---
+layout: default
+title: Curiosity Notebook
+---
+
+<header class="hero">
+<div class="container">
+<h1>Curiosity Notebook</h1>
+<h2>Documenting the process of building things</h2>
+</div>
+</header>
+
+<section class="container">
+<h3>Recently Curated</h3>
+<div class="grid">
+{% for post in site.posts limit:3 %}
+<div class="card">
+<span class="card-tag">#{{ post.tags[0] }}</span>
+<h3>{{ post.title }}</h3>
+<p>{{ post.excerpt }}</p>
+<a href="{{ post.url }}">Read →</a>
+</div>
+{% endfor %}
+</div>
+</section>
+
+<section class="philosophy">
+<p>Curiosity is the engine. Clarity is the outcome.</p>
+</section>
