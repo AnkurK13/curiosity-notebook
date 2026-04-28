@@ -3,27 +3,82 @@ layout: default
 title: Curiosity Notebook
 ---
 
-<header class="hero">
-<div class="container">
-<h1>Curiosity Notebook</h1>
-<h2>Documenting the process of building things</h2>
-</div>
+<!-- HERO -->
+<header class="hero text-center">
+  <div class="container">
+    <h1>Curiosity Notebook</h1>
+    <h2>Documenting the process of building things</h2>
+
+    <p>
+      Ideas, notes, and reflections on product, systems, and the mental models
+      that help me make sense of it all.
+    </p>
+
+    <div class="cta-group">
+      <a href="{{ '/blog.html' | relative_url }}" class="btn btn-primary">
+        → Start Reading My Thoughts
+      </a>
+      <a href="#" class="btn btn-secondary"> [View Product Deep Dives] </a>
+    </div>
+  </div>
 </header>
 
-<section class="container">
-<h3>Recently Curated</h3>
-<div class="grid">
-{% for post in site.posts limit:3 %}
-<div class="card">
-<span class="card-tag">#{{ post.tags[0] }}</span>
-<h3>{{ post.title }}</h3>
-<p>{{ post.excerpt }}</p>
-<a href="{{ post.url }}">Read →</a>
-</div>
-{% endfor %}
-</div>
+<!-- ABOUT SNIPPET -->
+<section class="container text-center">
+  <h3 class="insights-title">About Me</h3>
+  <p style="max-width: 700px; margin: 0 auto">
+    I enjoy breaking down complex systems—whether it's product design,
+    engineering workflows, or how people think. This notebook is my attempt to
+    document what I learn while building.
+  </p>
 </section>
 
-<section class="philosophy">
-<p>Curiosity is the engine. Clarity is the outcome.</p>
+<!-- FEATURED INSIGHTS -->
+<section class="container">
+  <h3 class="insights-title">Recently Curated</h3>
+
+  <div class="grid">
+    {% for post in site.posts limit:3 %}
+    <div class="card">
+      <span class="card-tag">#{{ post.tags[0] }}</span>
+      <h3>{{ post.title }}</h3>
+
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+
+      <a href="{{ post.url | relative_url }}" class="card-link">
+        Read Post →
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section>
+  <div class="philosophy">
+    <h2>Curiosity is My Default Setting.</h2>
+    <p>
+      "Doing is better than knowing. This space is where I try to turn chaos
+      into structured insight."
+    </p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta text-center">
+  <h2>Ready to Start Learning?</h2>
+
+  <p>
+    Whether you want to understand how to build a great product, or just explore
+    ideas—there's something here.
+  </p>
+
+  <div class="cta-group">
+    <a href="{{ '/blog.html' | relative_url }}" class="btn btn-primary">
+      Explore All Writings
+    </a>
+    <a href="{{ '/about.html' | relative_url }}" class="btn btn-outline">
+      About Me
+    </a>
+  </div>
 </section>
