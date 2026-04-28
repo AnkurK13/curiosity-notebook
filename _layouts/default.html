@@ -9,9 +9,10 @@
     />
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a> · <a href="/blog.html">Blog</a> ·
-      <a href="/about.html">About</a>
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}">Home</a> ·
+      <a href="{{ '/blog.html' | relative_url }}">Blog</a> ·
+      <a href="{{ '/about.html' | relative_url }}">About</a>
     </nav>
 
     {{ content }}
