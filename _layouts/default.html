@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>{{ page.title }}</title>
-<link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/styles.css' | relative_url }}"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a> · <a href="/blog.html">Blog</a> ·
+      <a href="/about.html">About</a>
+    </nav>
 
-<nav>
-<a href="/">Home</a> ·
-<a href="/blog.html">Blog</a> ·
-<a href="/about.html">About</a>
-</nav>
-
-{{ content }}
-
-</body>
+    {{ content }}
+  </body>
 </html>
